@@ -1,0 +1,81 @@
+
+#questions{
+    margin-right: 400px;
+    margin-left: 400px;
+}
+#timetitlebar {
+    padding: 50px,40px,40px,50px;
+    display: inline-block;
+}
+#title{
+    color: rgb(128, 45, 206);
+    margin-left: 50px;
+    display: inline-block;
+}
+#Time{
+    display: inline-block;
+    margin-left: 1200px;
+}
+#form{
+    margin-top: 100px;
+    text-align: center;
+}
+
+button{
+    color: white;
+    background-color: rgb(118, 45, 185);
+}
+#request{
+    margin-top: 30px;
+    margin-right: 400px;
+    margin-left: 420px;
+}
+
+#initials{
+    margin-left: 140px;
+    display: inline-block;
+    visibility: hidden;
+}
+#intialsinput{
+    text-align: center;
+    width: 120px;
+    display: inline-block;
+    visibility: hidden;
+}
+#submit{
+    margin-right: 350;
+    display: inline-block;
+    visibility: hidden;
+}
+#goback{
+    visibility: hidden;
+}  
+
+#clearhighscores{
+    visibility: hidden;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+.answersbtn{
+    display: list-item;
+    margin-left: 505px;
+    box-sizing: border-box;
+    width: auto;
+    visibility: hidden;
+}
+footer{
+    text-align: center;
+    margin-top: 15px;
+    visibility: hidden;
+}
+#hr{
+    visibility: hidden;
+    margin-right: 500px;
+    margin-left: 500px;
+}
+
+button:hover{
+   
+    opacity:50%;
+}
+

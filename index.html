@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="quizstyle.css">
+</head>
+<body>
+  <div class="container">
+  <div class="row">
+       <div class="col" id="timetitlebar">
+                <p  id="title">View Highscores</p>
+               <p id="Time">Time: </p> <span id="timer">0</span>
+        </div>    
+  </div>
+  
+        <div class="row" id="form">
+            <div class="col">
+             <h2 id="questions">Coding Quiz Challenge</h2>
+            </div>
+              <div class="col" id="request">Try to answer the following code-related questions within the
+                  time limit. Keep in mind that incorrect answers will penalize your
+                  scoretime by ten seconds!</p>
+                </div>
+                  <div class="col" id="initialsform"><p id="initials"></p>
+                  <input type="text" id="intialsinput"><button id="submit" class="btn">Submit</button><button id="goback" class="btn">Go Back</button><button id="clearhighscores" class="btn">Clear Highscores</button>
+                  </div>
+             <div class="col">
+               <button id="startbutton" onclick="" class="startbtn">Start Quiz</button>
+             </div>
+              <div class="col" id="answers-btn">
+                <button id="btn1" class="answersbtn"></button><br>
+                <button id="btn2" class="answersbtn"></button><br>
+                <button id="btn3" class="answersbtn"></button><br>
+                <button id="btn4" class="answersbtn"></button><br>
+              </div>
+        </div>   
+              <footer>
+                <hr id="hr">
+                <p id="message"></p>
+              </footer>
+            
+        </div>
+        <script src="quizscript.js"></script>
+        </form>
+</body>
+</html> 
