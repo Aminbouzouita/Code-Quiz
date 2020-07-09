@@ -3,46 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="quizstyle.css">
 </head>
 <body>
   <div class="container">
-  <div class="row">
-       <div class="col" id="timetitlebar">
-                <p  id="title">View Highscores</p>
-               <p id="Time">Time: </p> <span id="timer">0</span>
-        </div>    
-  </div>
-  
-        <div class="row" id="form">
-            <div class="col">
-             <h2 id="questions">Coding Quiz Challenge</h2>
-            </div>
-              <div class="col" id="request">Try to answer the following code-related questions within the
+      <div class="row justify-content-between" id="timetitlebar">
+         <div class="col-lg-3">
+                <p id="toptitle">View Highscores</p>
+         </div>
+         <div class="col-lg-3">
+               <p id="time">Time:</p><span id="timer">0</span>
+         </div>    
+      </div>
+      <div class="row justify-content-center" class="quiztitle" >
+          <div class="col-lg-4">
+             <h2 id="quiztitle">Coding Quiz Challenge</h2>
+          </div>
+      </div>
+      <div class="row justify-content-center" id="h2title">
+          <div class="col-lg-7">
+             <h2 id="questions"></h2>
+          </div>
+      </div>
+      <div class="row justify-content-center">   
+          <div class="col-lg-6" id="requestandscore">Try to answer the following code-related questions within the
                   time limit. Keep in mind that incorrect answers will penalize your
                   scoretime by ten seconds!</p>
-                </div>
-                  <div class="col" id="initialsform"><p id="initials"></p>
-                  <input type="text" id="intialsinput"><button id="submit" class="btn">Submit</button><button id="goback" class="btn">Go Back</button><button id="clearhighscores" class="btn">Clear Highscores</button>
-                  </div>
-             <div class="col">
-               <button id="startbutton" onclick="" class="startbtn">Start Quiz</button>
+          </div>
+      </div>
+      <div class="row justify-content-center">
+             <div class="col-lg-3">
+               <button id="startbutton">Start Quiz</button>
              </div>
-              <div class="col" id="answers-btn">
+      </div>
+      <div class="row justify-content-center" id="initialsbar">
+             <div class="col-lg-5" id="initialsform">
+               <p id="initials">Enter initials :</p>
+                  <input type="text" id="intialsinput" aria-label="John Smith">     
+                  <button id="submit" class="btn">Submit</button>
+                  <button id="goback" class="btn">Go Back</button>
+                  <button id="clearhighscores" class="btn">Clear Highscores</button>
+             </div>
+      </div> 
+      <div class="row justify-content-center">
+              <div class="col-lg-6" id="answers-btn">
                 <button id="btn1" class="answersbtn"></button><br>
                 <button id="btn2" class="answersbtn"></button><br>
                 <button id="btn3" class="answersbtn"></button><br>
                 <button id="btn4" class="answersbtn"></button><br>
+              </div>   
+      </div>   
+      <div class="row justify-content-center" >
+              <div class="col-lg-6">
+                 <hr id="hr">
               </div>
-        </div>   
-              <footer>
-                <hr id="hr">
-                <p id="message"></p>
-              </footer>
-            
-        </div>
-        <script src="quizscript.js"></script>
-        </form>
+      </div>    
+      <div class="row justify-content-center">     
+              <div class="col-lg-2">
+                 <p id="footermessage"></p>
+              </div>
+      </div>       
+  </div>
+  <script src="quizscript.js"></script>
+        
 </body>
 </html> 

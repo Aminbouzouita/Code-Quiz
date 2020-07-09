@@ -1,81 +1,89 @@
-
-#questions{
-    margin-right: 400px;
-    margin-left: 400px;
-}
-#timetitlebar {
-    padding: 50px,40px,40px,50px;
+/* title bar /title/timer */
+#time,#timer{
     display: inline-block;
 }
-#title{
+#toptitle{
     color: rgb(128, 45, 206);
-    margin-left: 50px;
     display: inline-block;
 }
-#Time{
-    display: inline-block;
-    margin-left: 1200px;
+/* quiz content  */
+.quiztitle{
+    margin-top: 20px; 
 }
-#form{
-    margin-top: 100px;
+#requestandscore{
     text-align: center;
 }
-
-button{
-    color: white;
-    background-color: rgb(118, 45, 185);
+#initialsbar{
+    margin-top: 20px;
 }
-#request{
-    margin-top: 30px;
-    margin-right: 400px;
-    margin-left: 420px;
-}
-
-#initials{
-    margin-left: 140px;
-    display: inline-block;
+/* footer hr/message*/
+#hr,#footermessage{
     visibility: hidden;
 }
-#intialsinput{
-    text-align: center;
-    width: 120px;
-    display: inline-block;
+/* initials form */
+
+#intialsinput ,#initials{
+    display: inline;
     visibility: hidden;
+}
+
+/* control buttons */
+#startbutton{
+   margin-left: 70px;
 }
 #submit{
-    margin-right: 350;
     display: inline-block;
     visibility: hidden;
-}
-#goback{
-    visibility: hidden;
-}  
-
-#clearhighscores{
-    visibility: hidden;
-    margin-left: 5px;
-    margin-top: 10px;
 }
 .answersbtn{
     display: list-item;
-    margin-left: 505px;
     box-sizing: border-box;
     width: auto;
     visibility: hidden;
 }
-footer{
-    text-align: center;
-    margin-top: 15px;
+#goback{
+    margin-left: 25px;
     visibility: hidden;
-}
-#hr{
+}  
+#clearhighscores{
     visibility: hidden;
-    margin-right: 500px;
-    margin-left: 500px;
+    margin-left: 5px;
 }
-
+/* buttons style */
+button{
+    color: white;
+    background-color: rgb(118, 45, 185);
+}
 button:hover{
-   
-    opacity:50%;
+    opacity:80%;
+  
+} 
+button:hover::before{
+    border-color: blue;
+    border-width: 2px;
 }
+/* media queries breakpoints */
+@media screen and (max-width: 1198px) and (min-width: 992px) {
+    .col-lg-4{
+        min-width: 45%;
+    }
+    .col-lg-6{
+     min-width:60% ;
+    
+    }
+    .col-lg-3{
+        min-width: 35%;
+    }
+   }
+@media screen and (max-width: 992px) and (min-width: 770px) {
+ .col-lg-4{
+    max-width: 56%;
+}
+.col-lg-6{
+ max-width:75% ;
 
+}
+.col-lg-3{
+    max-width: 36%;
+    }
+}

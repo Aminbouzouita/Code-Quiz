@@ -1,115 +1,109 @@
+var header= document.querySelector("#timetitlebar");
 var timeSpan = document.querySelector("#timer");
+var quiztitle =document.querySelector("#quiztitle")
+var question= document.querySelector("#questions");
+var request= document.querySelector("#requestandscore");
 var startbtn = document.querySelector("#startbutton");
-var request= document.querySelector("#request");
 var answersbtns= document.querySelector(".answerbtn");
-var btn1= document.querySelector("#btn1");
-var btn2= document.querySelector("#btn2");
-var btn3= document.querySelector("#btn3");
-var btn4= document.querySelector("#btn4");
+var initialsbar= document.querySelector("#initialsbar");
 var initials=document.querySelector("#initials");
 var initialsinput= document.querySelector("#intialsinput");
 var submitbtn= document.querySelector("#submit");
 var gobackbtn=document.querySelector("#goback");
-var header= document.querySelector("#timetitlebar");
-var clearhighscores= document.querySelector("#clearhighscores");   
+var clearhighscores= document.querySelector("#clearhighscores");
+var btn1= document.querySelector("#btn1");
+var btn2= document.querySelector("#btn2");
+var btn3= document.querySelector("#btn3");
+var btn4= document.querySelector("#btn4");
+var hr= document.querySelector("#hr");   
+var message= document.querySelector("#footermessage");
 var incorrect=0;
 var correct=0;
-
-var hr= document.querySelector("#hr");   
-var question= document.querySelector("#questions");
-var message= document.querySelector("#message")
 startbtn.addEventListener(`click`,function(event){
 event.preventDefault();
 startbtn.remove();
+request.textContent=``;
+    quiztitle.setAttribute("style","visibility:hidden");
+    question.setAttribute("style","visibility:visible");
     btn1.setAttribute("style","visibility:visible");
     btn2.setAttribute("style","visibility:visible");
     btn3.setAttribute("style","visibility:visible");
     btn4.setAttribute("style","visibility:visible");
-request.textContent=``;
 question1();
 setTime();
- function footermessage(){
-  hr.setAttribute("style","visibility:visible");
-  message.setAttribute("style","visibility:visible");
- }
+function footermessage(){
+     hr.setAttribute("style","visibility:visible");
+     message.setAttribute("style","visibility:visible");
+}
 function setTime() {
-    var seconds=75;
-    var timerInterval = setInterval(function() {
-      seconds--;
-      timeSpan.textContent = seconds;
-  
-      if(seconds === 0) {
-        clearInterval(timerInterval);
-
-      }
-  
-    }, 1000);
-  }
-
-////question1//
+     var seconds=75;
+     var timerInterval = setInterval(function() {
+     seconds--;
+     timeSpan.textContent = seconds;
+     if(seconds === 0) {
+     clearInterval(timerInterval);
+}},1000);}
+    //question1//
 function question1(){ 
-
     question.textContent ="Commonly used data types DO NOT Include :"; 
     btn1.textContent='1.Strings ';
     btn2.textContent='2.Booleans';
     btn3.textContent='3.Alerts  ';
     btn4.textContent='4.Numbers ';
     //answer1//
-    btn1.addEventListener('click',function(event){
-        event.preventDefault();
-    message.textContent=`incorrect answer`;
-    incorrect++;
-   footermessage()
-    var secondsLeft = 1;
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-   if(secondsLeft === 0) {  
-       question2();
-   }},1000);
-    
-   });
-    btn2.addEventListener('click',function(event){
-    event.preventDefault();
-    message.textContent=`incorrect answer`;
-    incorrect++;
-   footermessage()
-    var secondsLeft = 1;
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-   if(secondsLeft === 0) {  
-        question2();
-   }},1000);
-   
-   });
-    btn3.addEventListener('click',function(event){
-    event.preventDefault();
-    message.textContent=`correct answer`;
-    hr.setAttribute("style","visibility:visible");
-    correct++;
-    message.setAttribute("style","visibility:visible");
-    var secondsLeft = 1;
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-   if(secondsLeft === 0) {  
-      question2(); 
-   }},1000);
-    
-   });
-    btn4.addEventListener('click',function(event){
-    event.preventDefault();
-    message.textContent=`incorrect answer`;
-    incorrect++;
-   footermessage();
-    var secondsLeft = 1;
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-   if(secondsLeft === 0) {  
-      question2(); 
-   }},1000);
-    
-   });
-   //question2//
-   function question2(){
+btn1.addEventListener('click',function(event){
+event.preventDefault();
+message.textContent=`incorrect answer`;
+incorrect++;
+footermessage()
+var secondsLeft = 1;
+var timerInterval = setInterval(function() {
+secondsLeft--;
+if(secondsLeft === 0) {  
+  question2();
+}},1000);
+});
+
+btn2.addEventListener('click',function(event){
+event.preventDefault();
+message.textContent=`incorrect answer`;
+incorrect++;
+footermessage();
+var secondsLeft = 1;
+var timerInterval = setInterval(function() {
+secondsLeft--;
+if(secondsLeft === 0) {  
+  question2();
+}},1000); 
+});
+
+btn3.addEventListener('click',function(event){
+event.preventDefault();
+message.textContent=`correct answer`;
+correct++;
+footermessage();
+var secondsLeft = 1;
+var timerInterval = setInterval(function() {
+secondsLeft--;
+if(secondsLeft === 0) {  
+  question2(); 
+}},1000);  
+});
+
+btn4.addEventListener('click',function(event){
+event.preventDefault();
+message.textContent=`incorrect answer`;
+incorrect++;
+footermessage();
+var secondsLeft = 1;
+var timerInterval = setInterval(function() {
+secondsLeft--;
+if(secondsLeft === 0) {  
+  question2(); 
+}},1000);
+});
+    //question2//
+function question2(){
     message.setAttribute("style","visibility:hidden");
     question.textContent ="The condition in an if/else statement is enclosed within ___."; 
     btn1.textContent='1.Quotes ';
@@ -118,54 +112,53 @@ function question1(){
     btn4.textContent='4.square brackets';
     //answer2//
 btn1.addEventListener('click',function(event){
-    event.preventDefault();
+event.preventDefault();
 message.textContent=`incorrect answer`;
 incorrect++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
-   question3();
+  question3();
 }},1000);
-
 });
+
 btn2.addEventListener('click',function(event){
 event.preventDefault();
 message.textContent=`incorrect answer`;
 incorrect++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
-    question3();
+  question3();
 }},1000);
-
 });
+
 btn3.addEventListener('click',function(event){
 event.preventDefault();
 message.textContent=`correct answer`;
 correct++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
   question3(); 
 }},1000);
-
 });
+
 btn4.addEventListener('click',function(event){
 event.preventDefault();
 message.textContent=`incorrect answer`;
 incorrect++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
   question3(); 
 }},1000);
-
 });
-   //question3//
+    //question3//
 function question3(){
     message.setAttribute("style","visibility:hidden");
     question.textContent ="Arrays in JavaScript can be used to store ____."; 
@@ -173,50 +166,50 @@ function question3(){
     btn2.textContent='2.Other Arrays';
     btn3.textContent='3.Booleans';
     btn4.textContent='4.All of above';
-   //answer3//
+    //answer3//
 btn1.addEventListener('click',function(event){
     event.preventDefault();
 message.textContent=`incorrect answer`;
 incorrect++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
-   question4();
+  question4();
 }},1000);
-
 });
+
 btn2.addEventListener('click',function(event){
 event.preventDefault();
 message.textContent=`incorrect answer`;
 incorrect++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
-    question4();
+  question4();
 }},1000);
-
 });
+
 btn3.addEventListener('click',function(event){
 event.preventDefault();
 message.textContent=`incorrect answer`;
 incorrect++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
   question4(); 
 }},1000);
-
 });
+
 btn4.addEventListener('click',function(event){
 event.preventDefault();
 message.textContent=`correct answer`;
 correct++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
   question4(); 
 }},1000);
@@ -231,48 +224,48 @@ function question4(){
     btn4.textContent='4.Console.log';
     //answer4//
 btn1.addEventListener('click',function(event){
-    event.preventDefault();
+event.preventDefault();
 message.textContent=`incorrect answer`;
 incorrect++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
-   question5();
+  question5();
 }},1000);
-
 });
+
 btn2.addEventListener('click',function(event){
 event.preventDefault();
 message.textContent=`incorrect answer`;
 incorrect++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
-    question5();
+  question5();
 }},1000);
-
 });
+
 btn3.addEventListener('click',function(event){
 event.preventDefault();
 message.textContent=`incorrect answer`;
 incorrect++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
   question5(); 
 }},1000);
-
 });
+
 btn4.addEventListener('click',function(event){
 event.preventDefault();
 message.textContent=`correct answer`;
 correct++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
   question5(); 
 }},1000);
@@ -285,94 +278,92 @@ function question5(){
     btn2.textContent='2.Curly brackets';
     btn3.textContent='3.Quotes';
     btn4.textContent='4.Parentheses';
-   //answer5//
+    //answer5//
 btn1.addEventListener('click',function(event){
-    event.preventDefault();
+event.preventDefault();
 message.textContent=`incorrect answer`;
 incorrect++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
-   result();
+  result();
 }},1000);
-
 });
+
 btn2.addEventListener('click',function(event){
 event.preventDefault();
 message.textContent=`incorrect answer`;
 incorrect++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
-    result();
+  result();
 }},1000);
-
 });
+
 btn3.addEventListener('click',function(event){
 event.preventDefault();
 message.textContent=`incorrect answer`;
 incorrect++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
   result(); 
 }},1000);
-
 });
+
 btn4.addEventListener('click',function(event){
 event.preventDefault();
 message.textContent=`correct answer`;
 correct++;
 var secondsLeft = 1;
 var timerInterval = setInterval(function() {
-  secondsLeft--;
+secondsLeft--;
 if(secondsLeft === 0) {  
   result(); 
 }},1000);
 });
     //result//
- function result(){
-     btn1.remove();
-     btn2.remove();
-     btn3.remove();
-     btn4.remove();
-     let user=``;
-    question.textContent =`All done!`;
-    request.textContent=`final score = ` +incorrect+ ` incorrect answer and ` +correct+ ` correct answer`;
-    localStorage.setItem("score",request.textContent);
-    
-    request.setAttribute("style","visibility:visible");
-    initials.setAttribute("style","visibility:visible");
-    initials.textContent=`Enter initials`;
-    initialsinput.setAttribute("style","visibility:visible");
-    submitbtn.setAttribute("style","visibility:visible");
-   //score display//
-   submitbtn.addEventListener(`click`,function(event){
-     event.preventDefault();
-     localStorage.setItem("name",JSON.stringify(initialsinput.value));
-     header.remove();
-     initials.remove();
-     initialsinput.remove();
-    question.textContent =`Highscores`;
-    request.textContent=localStorage.getItem(JSON.parse(JSON.stringify("name")))+`-- Your last `+localStorage.getItem(JSON.parse(JSON.stringify("score")));
-    submitbtn.remove();
-    clearhighscores.setAttribute("style","visibility:visible");
-    gobackbtn.setAttribute("style","visibility:visible");
-   });
-  clearhighscores.addEventListener("click",function(event){
-    event.preventDefault();
-   request.remove();
-  });
-  gobackbtn.addEventListener("click",function(event){
-    event.preventDefault();
-   window.location = "index.html"
-
-  });
-
- }}
-}}}}
+function result(){
+    btn1.remove();
+    btn2.remove();
+    btn3.remove();
+    btn4.remove();
+    question.remove();
+    let user=``;
+quiztitle.textContent =`All done!`;
+quiztitle.setAttribute("style","visibility:visible");
+request.textContent=`final score = ` +incorrect+ ` incorrect answer and ` +correct+ ` correct answer`;
+localStorage.setItem("score",request.textContent);
+request.setAttribute("style","visibility:visible ; margin-top:25px; margin-right:85px");
+initials.setAttribute("style","visibility:visible");
+initialsinput.setAttribute("style","visibility:visible");
+submitbtn.setAttribute("style","visibility:visible");
+    //score display//
+submitbtn.addEventListener(`click`,function(event){
+event.preventDefault();
+localStorage.setItem("name",JSON.stringify(initialsinput.value));
+header.remove();  
+initials.remove();
+initialsinput.remove();
+quiztitle.textContent =`Highscores`;
+quiztitle.setAttribute("style","margin-top:25px");
+request.textContent=localStorage.getItem(JSON.parse(JSON.stringify("name")))+`-- Your last `+localStorage.getItem(JSON.parse(JSON.stringify("score")));
+submitbtn.remove();
+clearhighscores.setAttribute("style","visibility:visible");
+gobackbtn.setAttribute("style","visibility:visible");
 });
-
+    //last score //
+clearhighscores.addEventListener("click",function(event){
+event.preventDefault();
+request.remove();
+});
+gobackbtn.addEventListener("click",function(event){
+event.preventDefault();
+window.location = "index.html"
+});
+}}}}}}
+});
